@@ -34,12 +34,15 @@ const WeatherDetails = () => {
       <div className="topRowDis">HUMIDITY</div>
     </div>
 
-    <div className="topRow">
+    <div className="topRowNew">
       <div className="RowDis">{time.toLocaleString('en-US', { hour: 'numeric',minute: 'numeric', hour12: true })}</div>
-      <div className="RowDis">{location.state.props.weather.main.pressure}</div>
-      <div className="RowDis">--</div>
-      <div className="RowDis">{location.state.props.weather.main.humidity}</div>
+      <div className="RowDis" style={{marginRight: "5%"}}>{location.state.props.weather.main.pressure}</div>
+      <div className="RowDis" style={{marginRight: "5%"}}>--</div>
+      <div className="RowDis" style={{marginRight: "5%"}}>{location.state.props.weather.main.humidity}</div>
     </div>
+  </div>
+  <div className="bottomRow">
+    Bottom 
   </div>
   </div>;
   
