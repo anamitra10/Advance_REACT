@@ -2,9 +2,17 @@ import "../style/weatherDetails.scss";
 import union from "../asset/Union.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useAppDispatch } from "../redux/Hook";
+import { addUser } from "../redux/WeatherSlice";
 
 
 const WeatherDetails = () => {
+  const dispatch = useAppDispatch();
+  const addWish = () => {
+
+    dispatch(addUser(location.state.props.weather));
+
+  };
   const location = useLocation();
   var time=new Date();
   console.log(location.state.props.weather.weather[0].icon);
@@ -14,7 +22,7 @@ const WeatherDetails = () => {
   return <div>
     <div className="headerLow">
     <NavLink to="/" style={{textDecoration: "none"}}>{"< Back"}</NavLink>
-    <div className="addList">
+    <div className="addList" onClick={addWish}>
     <div>Add to list </div>  
     <img src={union} />
     </div>
@@ -42,7 +50,11 @@ const WeatherDetails = () => {
     </div>
   </div>
   <div className="bottomRow">
-    Bottom 
+    <div>
+    <div className="heading">SUNRISE & SUNSET</div>
+    <div className="lengthDay">Length of day:</div>
+    <div className="remDay">Remaining daylight:</div>
+    </div>
   </div>
   </div>;
   
