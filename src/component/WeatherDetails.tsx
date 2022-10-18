@@ -4,8 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useAppDispatch } from "../redux/Hook";
 import { addUser } from "../redux/WeatherSlice";
-import { getSunrise, getSunset } from 'sunrise-sunset-js';
-
 
 const WeatherDetails = () => {
   const dispatch = useAppDispatch();
@@ -40,7 +38,7 @@ var formattedTime2 = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(
     <NavLink to="/" style={{textDecoration: "none"}}>{"< Back"}</NavLink>
     <div className="addList" onClick={addWish}>
     <div>Add to list </div>  
-    <img src={union} />
+    <img src={union} className="plus"/>
     </div>
     </div>
     <div>
@@ -48,7 +46,7 @@ var formattedTime2 = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(
   <img src={url} />
   </div>
   <div className="location">{location.state.props.weather.name}</div>
-  <div className="temp">{Math.ceil(location.state.props.weather.main.temp - 273.15)}°</div>
+  <div className="tempu">{Math.ceil(location.state.props.weather.main.temp - 273.15)}°</div>
   </div>
   <div className="info">
     <div className="topRow">
