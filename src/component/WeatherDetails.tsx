@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useAppDispatch } from "../redux/Hook";
 import { addUser } from "../redux/WeatherSlice";
+import graph from "../asset/graph.jpg"
 
 const WeatherDetails = () => {
   const dispatch = useAppDispatch();
@@ -68,7 +69,7 @@ var formattedTime2 = hours2 + ':' + minutes2.substr(-2) + ':' + seconds2.substr(
     <div className="heading">SUNRISE & SUNSET</div>
     <div className="lengthDay">Sunrise Time:  {formattedTime1}</div>
     <div className="remDay">Sunset Time:  {formattedTime2}</div>
-    </div>
+    </div>  
   </div>
   </div>;
   
